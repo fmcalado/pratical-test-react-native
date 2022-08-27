@@ -3,12 +3,15 @@ import {
   NativeStackNavigationProp,
 } from "@react-navigation/native-stack";
 
-
+import BookDetailsScreen from "./screens/BookDetails/BookDetailsScreen";
+import CategoryScreen from "./screens/Category/CategoryScreen";
 import HomeScreen from "./screens/Home/HomeScreen";
 
 export type NavigationParams = NativeStackNavigationProp<StackParams>;
 type StackParams = {
   Home: any;
+  Category: any;
+  BookDetails: { imageUrl: string };
 };
 
 const AppNavigator = () => {
@@ -17,6 +20,8 @@ const AppNavigator = () => {
   return (
     <Navigator initialRouteName="Home" screenOptions={{ headerShown: false }}>
       <Screen name="Home" component={HomeScreen} />
+      <Screen name="Category" component={CategoryScreen} />
+      <Screen name="BookDetails" component={BookDetailsScreen} />
     </Navigator>
   );
 };
