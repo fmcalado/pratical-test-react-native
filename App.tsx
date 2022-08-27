@@ -11,8 +11,11 @@ import {
 
 import theme from "./src/global/styles/theme";
 import AppNavigator from "./src/app.routes";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 export default function App() {
+  const queryClient = new QueryClient();
+
   const [isLoaded] = useFonts({
     Lato_400Regular,
     Lato_700Bold,
@@ -33,7 +36,9 @@ export default function App() {
   return isLoaded ? (
     <ThemeProvider theme={theme}>
       <NavigationContainer>
-        <AppNavigator />
+        <QueryClientProvider client={queryClient}>
+          <AppNavigator />
+        </QueryClientProvider>
       </NavigationContainer>
     </ThemeProvider>
   ) : null;
