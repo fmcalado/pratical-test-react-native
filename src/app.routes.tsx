@@ -10,7 +10,10 @@ import HomeScreen from "./screens/Home/HomeScreen";
 export type NavigationParams = NativeStackNavigationProp<StackParams>;
 type StackParams = {
   Home: any;
-  Category: any;
+  Category: {
+    name: string;
+    encodedName: string;
+  };
   BookDetails: {
     imageUrl: string;
     title: string;

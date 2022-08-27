@@ -10,11 +10,13 @@ interface CategoryCardData {
   encodedName: string;
 }
 
-const CategoryCard: React.FC<CategoryCardData> = ({ name }) => {
+const CategoryCard: React.FC<CategoryCardData> = ({ name, encodedName }) => {
   const navigation = useNavigation<NavigationParams>();
 
   return (
-    <TouchableOpacity onPress={() => navigation.navigate('Category')}>
+    <TouchableOpacity
+      onPress={() => navigation.navigate("Category", { name, encodedName })}
+    >
       <Card />
       <CategoryNameWrapper>
         <CategoryName ellipsizeMode="tail" numberOfLines={3}>
