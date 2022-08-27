@@ -7,5 +7,11 @@ export default {
     gray2: "#4F4F4F",
     gray3: "#828282",
     gray6: "#F2F2F2"
-  }
+  },
+
+  fonts: {
+    regular: "Lato_400Regular",
+    bold: "Lato_700Bold",
+    black: "Lato_900Black",
+  },
 };
