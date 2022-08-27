@@ -11,7 +11,12 @@ export type NavigationParams = NativeStackNavigationProp<StackParams>;
 type StackParams = {
   Home: any;
   Category: any;
-  BookDetails: { imageUrl: string };
+  BookDetails: {
+    imageUrl: string;
+    title: string;
+    author: string;
+    description: string;
+  };
 };
 
 const AppNavigator = () => {

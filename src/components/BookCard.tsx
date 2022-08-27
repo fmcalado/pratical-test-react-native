@@ -13,12 +13,19 @@ interface BookCardData {
   description: string;
 }
 
-const BookCard: React.FC<BookCardData> = ({ imageUrl, title, author }) => {
+const BookCard: React.FC<BookCardData> = ({ imageUrl, title, author, description }) => {
   const navigation = useNavigation<NavigationParams>();
 
   return (
     <TouchableOpacity
-      onPress={() => navigation.navigate("BookDetails", {imageUrl})}
+      onPress={() =>
+        navigation.navigate("BookDetails", {
+          imageUrl,
+          title,
+          author,
+          description,
+        })
+      }
     >
       <BookCardCover source={{ uri: imageUrl }} />
       <BookCardNameWrapper>
